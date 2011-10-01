@@ -4,7 +4,7 @@ unpack
 A simple tool to make unpacking your compressed files simpler!
 
 Overview
--------
+--------
 Super simple script which unifies your unpacking needs into a single command. Don't you
 hate having to look up the combination of flags and inputs to unpack that file? Never fear,
 simply input a compressed file into unpack, and an unpacked copy is created. The original
@@ -15,7 +15,7 @@ $PATH variable, or add an alias to the script in .*rc. This [link](http://stacko
 
 
 Usage
--------
+-----
 'unpack [filename]'
 
 File types supported
@@ -26,12 +26,15 @@ how the file was originally compressed.
 
 Currently supports
 
-.zip
-.tar.gz
-.tar.bz2
-.gz
-.bz2
-.7z
-.rar
-.Z
+* .zip
+* .tar.gz
+* .tar.bz2
+* .gz
+* .bz2
+* .7z
+* .rar
+* .Z
 
+Contact
+--------------------
+Drop me a line at alex@holehouse.org if you want to shout at me!
