@@ -1,4 +1,4 @@
-#! /usr/bin/perl
+#!/usr/bin/perl
 
 #
 # Author: Alex Holehouse (alex@holehouse.org)
