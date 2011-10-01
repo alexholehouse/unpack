@@ -8,9 +8,10 @@
 #              way, without needing to faff around with options for the various
 #              programs available.
 
-# Usage: 
+# Usage: unpack [FILE]
 
-use warnings;
+# uncomment for debugging purposes
+# use warnings;
 
 # Initializing some key variables
 $full_extension = "";
@@ -27,6 +28,7 @@ if ($num_args != 1) {
 
 $input = $ARGV[0];
 
+# if --help or -h requested
 if (lc($input) eq "--help" || lc($input) eq "-h"){
     print "usage: unpack [FILE]\n";
     print "Automatically unpack and decompress common filetypes in one easy command\n\n";
@@ -39,7 +41,7 @@ print "\nUnpacking $input...\n\n";
 
 # check if there's a "." in the input filename
 $_ = $input;
-# Somewhat redundant loop, but splits the extenions into an array for later use if need be
+# Loop which splits the extenions into an array for later use if need be
 while (/\./){
 
     # get terminal .<something> from default input
@@ -67,7 +69,8 @@ if ($pos > 1){
 # ====================================================================
 #               Supported file type in if elsif statements below
 #     
-# For future upgrades, just add another elsif clause
+# For future upgrades, just add another elsif clause with appropriate
+# syntax.
 # 
 # ====================================================================
 # ====================================================================
@@ -98,13 +101,20 @@ elsif (lc($extensions_array[0]) eq "gz"){
     $out = system "gzip -c -d $input > $output";
 }
 
-# .7z file
+# .bz2 alone file
+# ---------------------------------------------------------------------
+elsif (lc($extensions_array[0]) eq "bz2"){
+    $output = substr($input, 0, (length($input)-4));
+    $out = system "bunzip2 -c -d $input > $output";
+}
+
+# .7z file needs [p7zip]
 # ---------------------------------------------------------------------
 elsif (lc($extensions_array[0]) eq "7z"){
     $out = system "7za e $input"
 }
 
-# .rar file
+# .rar file [needs unrar]
 # ---------------------------------------------------------------------
 elsif (lc($extensions_array[0]) eq "rar"){
     $out = system "unrar e $input"
