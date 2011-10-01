@@ -17,9 +17,8 @@ $PATH variable, or add an alias to the script in .*rc. This [link](http://stacko
 Usage
 -----
 
-    markup(:markdown, /md|mkdn?|markdown/) do |content|
-      Markdown.new(content).to_html
-    end
+    unpack [file]
+
 
 
 File types supported
