@@ -16,7 +16,9 @@ $PATH variable, or add an alias to the script in .*rc. This [link](http://stacko
 
 Usage
 -----
-`unpack [filename]` 
+examples. Let's look at Markdown:
+
+   unpack [filename] 
 
 File types supported
 --------------------
