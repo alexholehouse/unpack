@@ -12,7 +12,16 @@ file isn't altered, so if it goes wrong your data is still safe.
 
 To make it work from commandline anywhere, download, then add it's location to your 
 $PATH variable, or add an alias to the script in .*rc. This [link](http://stackoverflow.com/questions/6637622/how-can-i-run-perl-script-from-anywhere-in-unix-environment) might help.
+You will also need to 
 
+    chmod +x unpack.pl
+    mv unpack.pl unpack
+
+To have an executable called unpack. You can, of course simply run it as 
+
+   perl unpack.pl
+
+It's a free country, after all.
 
 Usage
 -----
