@@ -85,7 +85,7 @@ if (lc($extensions_array[0]) eq "zip"){
 # tar.gz file
 # ---------------------------------------------------------------------
 elsif (lc($twofinal) eq "tar.gz"){
-    system('tar xvfz $input');
+    $out = system "tar -xvfz $input";
 }
 
 # tar.bz2 file
