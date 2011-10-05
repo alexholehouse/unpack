@@ -1,4 +1,12 @@
-#! /bin/bash
+#!/bin/bash
+# simple script for installing unpack in /usr/bin
 
+echo -e "Trying to install in /usr/bin...";
 chmod +x unpack.pl
-sudo cp unpack.pl /usr/bin/unpack
+sudo cp -i unpack.pl /usr/bin/unpack
+if [ $? == 0 ] 
+then
+	echo -e "... completed succesfully";
+else 
+	echo -e "... error. Operation was not completed - were you sudo?";
+fi

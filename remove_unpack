@@ -2,4 +2,9 @@
 
 sudo rm /usr/bin/unpack
 
-echo "Removed /usr/bin/unpack"
+if [ $? == 0 ] 
+then
+	echo "Removed /usr/bin/unpack"
+else
+	echo "There was a problem removing /usr/bin/unpack"
+fi
