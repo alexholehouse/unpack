@@ -57,7 +57,9 @@ will be good to go!
 ### 3) As a script
 
 Of course, you can always just use it as a local script 
+
     unpack.pl [filename]
+
 but that's less fun!
 
 Removal
