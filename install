@@ -1,0 +1,4 @@
+#! /bin/bash
+
+chmod +x unpack.pl
+sudo cp unpack.pl /usr/bin/unpack

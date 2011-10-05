@@ -1,0 +1,5 @@
+#! /bin/bash
+
+sudo rm /usr/bin/unpack
+
+echo "Removed /usr/bin/unpack"
