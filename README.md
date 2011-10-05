@@ -14,9 +14,9 @@ Installation
 -----------
 There are a couple of ways you can make this work in a system-wide manner.
 
-Quick gude - 
+Quick guide - 
 
-   ./install
+    ./install
    
 And you're done!
 
@@ -24,11 +24,11 @@ And you're done!
 ### 1) Default installer
 
 You could just run 
-   ./install
+    ./install
 and have done. May need to give install execution permission - if you get a 
-   bash: ./install: Permission denied
+   `bash: ./install: Permission denied`
 error or something similar then  go ahead and do
-   chmod +x install
+    chmod +x install
 and retry running it.
 
 What this does is it copies unpack in a runnable format into your /usr/bin directory. If an "unpack"
@@ -36,34 +36,34 @@ file already exists you'll be asked if you want to overwrite it. The /usr/bin di
 will typically look for executable files.
 
 ### 2) Custom folder 
-Alternativly, if you're like me you might have a folder somewhere where you keep all your custom
+Alternatively, if you're like me you might have a folder somewhere where you keep all your custom
 system-wide executables. To make a folder work like this, you need to add it's location to
-the $PATH variabe. The $PATH variable is a system wide variable which tells your shell where to look for executables.
+the `$PATH` variable. The $PATH variable is a system wide variable which tells your shell where to look for executables.
 To see it's current content you can type
 
-   echo $PATH
+    echo $PATH
 
-Cool ah? You'll see /usr/bin is in there, which is why the default installer works.
+Cool ah? You'll see `/usr/bin` is in there, which is why the default installer works.
 
 With BASH, to add your own folder to this variable you need to do
 
-   export PATH=$PATH:/full/location/of/custom/folder
+    export PATH=$PATH:/full/location/of/custom/folder
    
 If you run this in the terminal that's great, BUT it's only valid for that terminal, and for that session.
-This isn't so helpul, so instead you can add the above line to your .bashrc. This means everytime the BASH 
-shell is invoked it will add this location to $PATH, meaning all the executables in your custom location 
+This isn't so helpul, so instead you can add the above line to your `.bashrc`. This means every time the BASH 
+shell is invoked it will add this location to `$PATH`, meaning all the executables in your custom location 
 will be good to go!
 
 ### 3) As a script
 
 Of course, you can always just use it as a local script 
-   unpack.pl [filename]
+    unpack.pl [filename]
 but that's less fun!
 
 Removal
 -------
 
-If you used the default insaller then run ./remove_unpack to remove it.
+If you used the default installer then run ./remove_unpack to remove it.
 
 It's perl, so there's no compilation or anything like that. It's one file. "Removal" is literally a case of 
 deleting that one file.
@@ -94,4 +94,4 @@ Currently supports
 
 Contact
 --------------------
-Drop me a line at alex@holehouse.org if you want to shout at me!
+Drop me a line at alex@holehouse.org if you want to shout at me, or request additional file format support.
