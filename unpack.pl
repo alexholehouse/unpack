@@ -60,10 +60,14 @@ while (/\./){
 # two-terminal extension
 
 # get the two terminal file extensions if present
+
+
 if ($pos > 1){
-    $twofinal = $extensions_array[1] . "." . $extensions_array[0];
+	  $twofinal = $extensions_array[1] . "." . $extensions_array[0];
 }
 
+
+print "Two final is $twofinal\n";
 
 # ====================================================================
 # ====================================================================
@@ -85,7 +89,7 @@ if (lc($extensions_array[0]) eq "zip"){
 # tar.gz file
 # ---------------------------------------------------------------------
 elsif (lc($twofinal) eq "tar.gz"){
-    $out = system "tar -xvfz $input";
+    $out = system "tar -xvzf $input";
 }
 
 # tar.bz2 file
