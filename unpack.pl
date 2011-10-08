@@ -67,8 +67,6 @@ if ($pos > 1){
 }
 
 
-print "Two final is $twofinal\n";
-
 # ====================================================================
 # ====================================================================
 #               Supported file type in if elsif statements below
@@ -83,52 +81,58 @@ print "Two final is $twofinal\n";
 # ---------------------------------------------------------------------
 # .zip will always be the last thing
 if (lc($extensions_array[0]) eq "zip"){
-    $out = system "unzip $input";
+    $out = system "unzip \"$input\"";
 }
 
 # tar.gz file
 # ---------------------------------------------------------------------
 elsif (lc($twofinal) eq "tar.gz"){
-    $out = system "tar -xvzf $input";
+    $out = system "tar -xvzf \"$input\"";
 }
 
 # tar.bz2 file
 # ---------------------------------------------------------------------
 elsif (lc($twofinal) eq "tar.bz2"){
-    $out = system "tar -jxvf $input";
+    $out = system "tar -jxvf \"$input\"";
 }
 
 # .gz alone file
 # ---------------------------------------------------------------------
 elsif (lc($extensions_array[0]) eq "gz"){
     $output = substr($input, 0, (length($input)-3));
-    $out = system "gzip -c -d $input > $output";
+    $out = system "gzip -c -d \"$input\" > $output";
 }
 
 # .bz2 alone file
 # ---------------------------------------------------------------------
 elsif (lc($extensions_array[0]) eq "bz2"){
     $output = substr($input, 0, (length($input)-4));
-    $out = system "bunzip2 -c -d $input > $output";
+    $out = system "bunzip2 -c -d \"$input\" > $output";
 }
 
 # .7z file needs [p7zip]
 # ---------------------------------------------------------------------
 elsif (lc($extensions_array[0]) eq "7z"){
-    $out = system "7za e $input"
+    $out = system "7za e \"$input\"";
 }
 
 # .rar file [needs unrar]
 # ---------------------------------------------------------------------
 elsif (lc($extensions_array[0]) eq "rar"){
-    $out = system "unrar e $input"
+    print "--------------------------------------------------\n";
+    print "             .rar unpacking message\n";
+    print "--------------------------------------------------\n";
+    print "This unpacks to the current directory.\nIf this is a problem, please CTRL-C, create a new\ndirectory, move the archive into it and unpack in\nthere. You have been warned :-)\n";
+    print "--------------------------------------------------\n";
+    pressEnter();
+    $out = system "unrar e \"$input\"";
 }
 
 # .Z
 # ---------------------------------------------------------------------
 elsif (lc($extensions_array[0]) eq "z"){
     $output = substr($input, 0, (length($input)-2));
-    $out = system "uncompress -c -d $input > $output";
+    $out = system "uncompress -c -d \"$input\" > $output";
 }
 
 else {
@@ -144,7 +148,12 @@ else{
 }
     
     
-
+# minor subroutine to trigger "enter" from the user
+sub pressEnter
+{
+	print "Press Enter to Continue...\n";
+	$ignore = <STDIN>;
+}
 
 
 
