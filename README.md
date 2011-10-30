@@ -1,7 +1,11 @@
 unpack
 =============
 
-A simple tool to make unpacking your compressed files simpler!
+A simple tool to make unpacking your compressed files simpler! 
+
+NOTE - This is a tool for *nix (tested on Ubuntu but should work fine in most Linux distros) for
+users who ruddy love the command line. If you don't understand most/all of this markdown file then
+it's probably not for you :-)
 
 Overview
 --------
