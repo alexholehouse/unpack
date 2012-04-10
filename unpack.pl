@@ -44,7 +44,7 @@ $_ = $input;
 # Loop which splits the extenions into an array for later use if need be
 while (/\./){
 
-    # get terminal .<something> from default input
+    # get final .<something> from default input
     $extension = (m/([^.]+)$/)[0];
         
     $extensions_array[$pos] = $extension;
