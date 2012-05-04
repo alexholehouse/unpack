@@ -3,7 +3,7 @@ unpack
 
 A simple tool to make unpacking your compressed files simpler! 
 
-NOTE - This is a tool for *nix (tested on Ubuntu but should work fine in most Linux distros) for
+NOTE - This is a tool for *nix (tested on Ubuntu but should work fine in most Linux distros as well as OSX) for
 users who ruddy love the command line. If you don't understand most/all of this markdown file then
 it's probably not for you :-)
 
@@ -29,15 +29,11 @@ And you're done!
 
 You could just run 
     ./install
-and have done. May need to give install execution permission - if you get a 
-   `bash: ./install: Permission denied`
-error or something similar then  go ahead and do
-    chmod +x install
-and retry running it.
 
 What this does is it copies unpack in a runnable format into your /usr/bin directory. If an "unpack"
 file already exists you'll be asked if you want to overwrite it. The /usr/bin directory is where your shell
-will typically look for executable files.
+will typically look for executable files. If this doesn't work (i.e. you get a `command not found: unpack` error 
+then you may need to check your `$PATH` variable, which is discussed below).
 
 ### 2) Custom folder 
 Alternatively, if you're like me you might have a folder somewhere where you keep all your custom
@@ -72,13 +68,12 @@ Removal
 If you used the default installer then run ./remove_unpack to remove it.
 
 It's perl, so there's no compilation or anything like that. It's one file. "Removal" is literally a case of 
-deleting that one file.
+deleting that one file. As mentioned, the default installer copies the file to `usr/bin`.
 
 Usage
 -----
 
     unpack [file]
-
 
 
 File types supported
@@ -97,7 +92,9 @@ Currently supports
 * .7z
 * .rar
 * .Z
+* .tgz
 
 Contact
 --------------------
-Drop me a line at alex@holehouse.org if you want to shout at me, or request additional file format support.
+Drop me a line at alex@holehouse.org if you want to shout at me, or request additional file format support. Adding support
+is just another ifelse in the code!
