@@ -135,6 +135,14 @@ elsif (lc($extensions_array[0]) eq "z"){
     $out = system "uncompress -c -d \"$input\" > $output";
 }
 
+# .tgz
+# ---------------------------------------------------------------------
+elsif (lc($extensions_array[0]) eq "tgz"){
+  
+    $out = system "gunzip -c \"$input\"| tar -xvf - ";
+}
+
+
 else {
     print "\nError - Unknown file extension...\n"
 } 
