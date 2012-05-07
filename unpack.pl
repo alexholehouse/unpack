@@ -81,7 +81,8 @@ if ($pos > 1){
 # ---------------------------------------------------------------------
 # .zip will always be the last thing
 if (lc($extensions_array[0]) eq "zip"){
-    $out = system "unzip \"$input\"";
+    $output = substr($input, 0, (length($input)-4));
+    $out = system "unzip \"$input\" -d \"$output\"";
 }
 
 # tar.gz file
