@@ -32,7 +32,7 @@ $input = $ARGV[0];
 if (lc($input) eq "--help" || lc($input) eq "-h"){
     print "usage: unpack [FILE]\n";
     print "Automatically unpack and decompress common filetypes in one easy command\n\n";
-    print "Currently supports the following filetypes:\n.zip\n.tar.gz\ntar.bz2\n.gz\n.bz2\n.7z\n.rar\n.Z\n\n";
+    print "Currently supports the following filetypes:\n.zip\n.tar.gz\ntar.bz2\n.gz\n.bz2\n.7z\n.rar\n.Z\n.tgz\n\n";
     print "Report bugs and future requests to alex\@holehouse.org\n";
     exit;
 }
