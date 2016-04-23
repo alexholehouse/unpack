@@ -24,6 +24,8 @@ Quick guide -
    
 And you're done!
 
+NOTE: As of OSX El Capitan (10.11) no one (not even root!) can write to `/usr`. As a result, the default installation script will no longer work. However, to get around this just use the custom folder method, as detailed below.
+
 
 ### 1) Default installer
 
